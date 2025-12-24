@@ -53,7 +53,7 @@ const Team: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-10 items-start mb-20">
-          <div className="bg-white rounded-[2rem] p-4 shadow-xl">
+          <div className="bg-[#141210] border border-white/5 rounded-[2rem] p-4 shadow-2xl">
             <div className="rounded-[1.5rem] overflow-hidden bg-stone-900 relative">
               <img
                 src={leadership.image}
@@ -68,13 +68,13 @@ const Team: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-[2rem] p-8 md:p-10 text-stone-900 shadow-xl">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-100 text-xs font-semibold uppercase tracking-widest text-stone-600">
+          <div className="bg-[#141210] border border-white/5 rounded-[2rem] p-8 md:p-10 text-stone-100 shadow-2xl">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-900/80 text-xs font-semibold uppercase tracking-widest text-stone-400 border border-stone-800">
               {leadership.role}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mt-4">{leadership.name}</h2>
-            <p className="text-stone-600 mt-2 font-medium">{leadership.tagline}</p>
-            <div className="mt-6 space-y-4 text-stone-600 leading-relaxed">
+            <p className="text-stone-400 mt-2 font-medium">{leadership.tagline}</p>
+            <div className="mt-6 space-y-4 text-stone-400 leading-relaxed">
               {leadership.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -82,11 +82,11 @@ const Team: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12">
+        <div className="bg-[#141210] border border-white/5 rounded-[2.5rem] p-8 md:p-12">
           <h3 className="text-2xl font-semibold text-stone-100 mb-8">Our Team</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {team.map((member) => (
-              <div key={member.name} className="bg-white rounded-[1.5rem] p-6 shadow-lg">
+              <div key={member.name} className="bg-[#0c0a09] border border-white/5 rounded-[1.5rem] p-6 shadow-xl">
                 <div className="h-48 rounded-2xl bg-stone-900/90 mb-5 overflow-hidden relative">
                   <img
                     src={member.image}
@@ -99,9 +99,9 @@ const Team: React.FC = () => {
                   />
                   <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
-                <p className="text-lg font-semibold text-stone-900">{member.name}</p>
-                <p className="text-sm text-stone-500 mb-3">{member.role}</p>
-                <p className="text-sm text-stone-600">{member.focus}</p>
+                <p className="text-lg font-semibold text-stone-100">{member.name}</p>
+                <p className="text-sm text-stone-400 mb-3">{member.role}</p>
+                <p className="text-sm text-stone-500">{member.focus}</p>
               </div>
             ))}
           </div>
