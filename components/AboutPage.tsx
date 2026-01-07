@@ -10,10 +10,10 @@ const skills = [
 ];
 
 const stats = [
-  { value: '20+', label: 'Years of Experience' },
-  { value: '1,000+', label: 'Products Shipped' },
-  { value: '300+', label: 'Founders Supported' },
-  { value: '64', label: 'Markets Entered' }
+  { value: '6+', label: 'Years of Combined Experience' },
+  { value: '1+', label: 'Products Shipped' },
+  { value: '5+', label: 'Tools Integrated' },
+  { value: '4+', label: 'Markets Evaluated' }
 ];
 
 const AboutPage: React.FC = () => {
@@ -40,10 +40,15 @@ const AboutPage: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
           <div className="rounded-3xl overflow-hidden bg-[#141210] border border-white/5 shadow-2xl">
-            <div className="aspect-[5/4] w-full bg-[linear-gradient(135deg,_rgba(120,113,108,0.2),_rgba(41,37,36,0.8))] relative">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(255,255,255,0.12),_transparent_60%)]" />
+            <div className="aspect-[5/4] w-full relative">
+              <img
+                src="/assets/office-space.png"
+                alt="Barek office space"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(0,0,0,0.2),_transparent_60%)]" />
               <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-black/40 border border-white/10 p-4 backdrop-blur-sm">
-                <p className="text-xs uppercase tracking-[0.3em] text-stone-400">Studio Floor</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-stone-300">Studio Floor</p>
                 <p className="text-sm text-stone-200 mt-2">
                   A culture of builders shipping human-first software.
                 </p>
@@ -58,15 +63,16 @@ const AboutPage: React.FC = () => {
               The Best.
             </h2>
             <p className="text-stone-400 mt-4 leading-relaxed">
-              Barek is a product studio where designers, engineers, and operators build companies
-              side by side. We bring the pace of a startup with the rigor of an operating system.
+              Barek is a productized studio where designers, engineers, and operators build
+              software startups side by side. We move with startup speed and operate with
+              system-level rigor.
             </p>
             <p className="text-stone-500 mt-4 leading-relaxed">
               From first prototype to scale, we combine market validation, shared infrastructure,
-              and disciplined execution to deliver enduring ventures.
+              and disciplined execution to build enduring products.
             </p>
             <button className="mt-6 inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-medium text-stone-200 hover:border-stone-500 hover:text-white transition-colors">
-              Contact Us
+              Partner With Us
             </button>
           </div>
         </div>
@@ -121,14 +127,15 @@ const AboutPage: React.FC = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.15),_transparent_55%)]" />
 
           <div className="relative px-6 sm:px-10 py-14 text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-stone-500">Hire Us Now</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-stone-500">Our Focus</p>
             <h3 className="text-3xl sm:text-4xl font-bold text-stone-100 mt-4">
-              We Are Always Ready To
-              <br className="hidden sm:block" />
-              Build What Matters.
+              Building scalable software startups.
             </h3>
+            <p className="text-stone-400 mt-4 max-w-2xl mx-auto">
+              We are a portfolio of software startups, building scalable software products that drive innovation and growth.
+            </p>
             <button className="mt-8 inline-flex items-center rounded-full bg-stone-100 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-white transition-colors">
-              Get Started
+              Explore the Portfolio
             </button>
           </div>
         </div>

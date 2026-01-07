@@ -42,8 +42,8 @@ const Hero: React.FC = () => {
 
         {/* Subtext */}
         <p className="text-lg sm:text-xl text-stone-400 leading-relaxed max-w-2xl mx-auto mb-12 animate-[slideUp_1s_ease-out]">
-          Unlock the power of our ecosystem. From automation to smart insights, 
-          we build the <span className="text-stone-200 font-medium">AI solutions and SaaS products</span> that redefine everyday technology.
+          We build a productized portfolio of software startups—AI-native ventures designed to scale,
+          compound, and deliver lasting value.
         </p>
 
         {/* CTA Button */}
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             href="#portfolio" 
             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-stone-700 rounded-full font-medium text-stone-300 hover:text-white hover:border-stone-500 hover:bg-stone-900/50 transition-all duration-300 overflow-hidden"
           >
-            <span className="relative z-10">Explore Ecosystem</span>
+            <span className="relative z-10">View the Portfolio</span>
             <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>

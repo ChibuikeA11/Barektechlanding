@@ -8,18 +8,18 @@ const CTA: React.FC = () => {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-stone-700 via-stone-500 to-stone-700" />
             
             <h2 className="text-3xl sm:text-5xl font-bold text-stone-100 mb-6">
-                Ready to see what's next?
+                Build with a productized studio, not a services agency.
             </h2>
             <p className="text-lg text-stone-400 max-w-2xl mx-auto mb-10">
-                Explore our full portfolio of ventures or get in touch if you're a founder looking to collaborate with our studio.
+                Explore our portfolio or apply to partner on a new venture with our team.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button className="px-8 py-4 bg-stone-100 text-stone-900 rounded-full font-medium hover:bg-white transition-all shadow-xl hover:-translate-y-1">
-                    Explore Our Ecosystem
+                    View Portfolio
                 </button>
                 <button className="px-8 py-4 bg-transparent text-stone-300 border border-stone-700 rounded-full font-medium hover:bg-stone-800 transition-all hover:border-stone-500">
-                    Contact Studio
+                    Founder Partnership
                 </button>
             </div>
         </div>

@@ -23,7 +23,7 @@ const Mission: React.FC = () => {
 
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-stone-800 pt-12">
             {[
-                { label: "Ventures Launched", value: "12+" },
+                { label: "Products Launched", value: "12+" },
                 { label: "Active Users", value: "2.5M" },
                 { label: "Global Markets", value: "30+" },
                 { label: "Team Size", value: "45" },

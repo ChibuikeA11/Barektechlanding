@@ -55,10 +55,10 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Right: Login Button (Desktop) */}
+          {/* Right: CTA (Desktop) */}
           <div className="hidden md:flex items-center z-20 relative">
             <button className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 bg-stone-100/10 text-stone-100 hover:bg-stone-100/20 border border-stone-100/10 backdrop-blur-sm`}>
-                Login
+                Portfolio
             </button>
           </div>
 
@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
             ))}
             <div className="h-px bg-stone-800 w-full my-2" />
             <button className="w-full py-3 bg-stone-100 text-stone-900 rounded-lg font-medium hover:bg-white transition-colors">
-              Login
+              Portfolio
             </button>
           </div>
         </div>

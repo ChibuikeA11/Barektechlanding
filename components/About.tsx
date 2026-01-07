@@ -26,8 +26,8 @@ const About: React.FC = () => {
           </h2>
           
           <p className="text-lg text-stone-400 max-w-2xl mx-auto leading-relaxed">
-            Barek isn't a traditional VC. We apply industrial-grade process 
-            and shared intelligence to the art of company building.
+            Barek isn’t a traditional VC or services shop. We build and own a productized portfolio
+            of software startups, backed by shared systems and execution.
           </p>
         </div>
 

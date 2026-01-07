@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                 <span className="font-bold text-lg text-stone-100">Barek</span>
             </div>
             <p className="text-stone-500 text-sm leading-relaxed">
-              Building the startups redefining everyday technology. San Francisco based product studio.
+              Building the startups redefining everyday technology. A global product studio.
             </p>
           </div>
           
