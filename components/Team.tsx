@@ -52,13 +52,13 @@ const Team: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-10 items-start mb-20">
-          <div className="bg-[#141210] border border-white/5 rounded-[2rem] p-4 shadow-2xl">
-            <div className="rounded-[1.5rem] overflow-hidden bg-stone-900 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 lg:gap-10 items-start mb-16 lg:mb-20">
+          <div className="bg-[#141210] border border-white/5 rounded-[1.75rem] p-3 sm:p-4 shadow-2xl">
+            <div className="rounded-[1.4rem] overflow-hidden bg-stone-900 relative flex items-center justify-center">
               <img
                 src={leadership.image}
                 alt={leadership.name}
-                className="w-full h-[380px] object-cover"
+                className="w-full h-[300px] sm:h-[340px] lg:h-[380px] object-contain object-center"
                 onError={(event) => {
                   const img = event.currentTarget;
                   img.src = '/assets/team/placeholder.svg';
@@ -68,7 +68,7 @@ const Team: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-[#141210] border border-white/5 rounded-[2rem] p-8 md:p-10 text-stone-100 shadow-2xl">
+          <div className="bg-[#141210] border border-white/5 rounded-[1.75rem] p-6 sm:p-7 lg:p-8 text-stone-100 shadow-2xl">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-900/80 text-xs font-semibold uppercase tracking-widest text-stone-400 border border-stone-800">
               {leadership.role}
             </div>
@@ -82,19 +82,19 @@ const Team: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-[#141210] border border-white/5 rounded-[2.5rem] p-8 md:p-12">
-          <h3 className="text-2xl font-semibold text-stone-100 mb-8">Our Team</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-[#141210] border border-white/5 rounded-[2rem] p-6 sm:p-8 lg:p-10">
+          <h3 className="text-2xl font-semibold text-stone-100 mb-6">Our Team</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {team.map((member) => (
-              <div key={member.name} className="bg-[#0c0a09] border border-white/5 rounded-[1.5rem] p-6 shadow-xl">
-                <div className="h-48 rounded-2xl bg-stone-900/90 mb-5 overflow-hidden relative">
+              <div key={member.name} className="bg-[#0c0a09] border border-white/5 rounded-[1.25rem] p-4 sm:p-5 shadow-xl">
+                <div className="h-44 sm:h-48 lg:h-52 rounded-xl bg-stone-900/90 mb-4 overflow-hidden relative flex items-center justify-center">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain object-center"
                     onError={(event) => {
                       const img = event.currentTarget;
-                    img.src = '/assets/team/placeholder.svg';
+                      img.src = '/assets/team/placeholder.svg';
                     }}
                   />
                   <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 to-transparent" />
