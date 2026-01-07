@@ -3,11 +3,11 @@
 import React from 'react';
 
 const leadership = {
-  name: 'Kehinde Omole',
+  name: 'Kehinde Michael Omole',
   role: 'CEO',
   tagline: 'Visionary leadership for sustainable growth.',
   bio: [
-    'Kehinde brings a founder-first mindset and a relentless focus on product quality, helping the team ship technology that feels human and useful.',
+    'Mr. Kehinde brings a founder-first mindset and a relentless focus on product quality, helping the team ship technology that feels human and useful.',
     'With a background spanning strategy, partnerships, and scale, he keeps the company aligned on impact while building a culture of trust.'
   ],
   image: '/assets/team/KehindeOmole.png'
