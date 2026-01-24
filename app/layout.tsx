@@ -1,9 +1,16 @@
 import { DM_Sans, Inter } from 'next/font/google';
+import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 import './globals.css';
 
 export const metadata = {
   title: 'Barek Technologies | Building the Future',
-  description: 'Barek Technologies product studio and team.'
+  description: 'Barek Technologies product studio and team.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png'
+  }
 };
 
 const inter = Inter({
@@ -22,7 +29,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${dmSans.variable}`}>
       <body className="font-sans">
-        {children}
+        <Theme appearance="dark" accentColor="gray" radius="large">
+          <div className="relative min-h-screen bg-background text-text">
+            <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.04] mix-blend-overlay" />
+            <div className="relative z-10">
+              {children}
+            </div>
+          </div>
+        </Theme>
       </body>
     </html>
   );

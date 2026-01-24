@@ -1,14 +1,59 @@
-import React from 'react';
-import { ArrowRight, Hexagon, Zap, Box, Triangle, Circle } from 'lucide-react';
+"use client";
+
+import React, { useEffect, useRef } from 'react';
+import { ArrowRightIcon, Component2Icon, LightningBoltIcon, CubeIcon, TriangleUpIcon, CircleIcon } from '@radix-ui/react-icons';
+import { Button } from '@radix-ui/themes';
 
 const Hero: React.FC = () => {
+  const orbRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const orb = orbRef.current;
+    if (!orb) return;
+
+    let frameId = 0;
+    const target = { x: 0, y: 0 };
+    const current = { x: 0, y: 0 };
+
+    const update = () => {
+      current.x += (target.x - current.x) * 0.08;
+      current.y += (target.y - current.y) * 0.08;
+      orb.style.transform = `translate(${current.x}px, ${current.y}px)`;
+      frameId = requestAnimationFrame(update);
+    };
+
+    const onMove = (event: MouseEvent) => {
+      const { innerWidth, innerHeight } = window;
+      const offsetX = (event.clientX / innerWidth - 0.5) * 120;
+      const offsetY = (event.clientY / innerHeight - 0.5) * 120;
+      target.x = offsetX;
+      target.y = offsetY;
+    };
+
+    frameId = requestAnimationFrame(update);
+    window.addEventListener('mousemove', onMove);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener('mousemove', onMove);
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[#0c0a09] pt-32 pb-20">
+    <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-background pt-32 pb-20">
       
       {/* Background Ambience */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-stone-800/20 to-transparent pointer-events-none opacity-50 blur-3xl" />
       <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-stone-800/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-[20%] left-[-10%] w-96 h-96 bg-stone-800/20 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Orb Gradient */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          ref={orbRef}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full opacity-60 blur-[120px] bg-[radial-gradient(circle,_rgba(120,113,108,0.55),_rgba(12,10,9,0)_65%)]"
+        />
+      </div>
 
       {/* Honeycomb Pattern Overlay */}
       <div className="absolute inset-0 opacity-[0.03]" 
@@ -48,13 +93,17 @@ const Hero: React.FC = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center mb-20 animate-[fadeIn_1.2s_ease-out]">
-          <a 
-            href="#portfolio" 
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-stone-700 rounded-full font-medium text-stone-300 hover:text-white hover:border-stone-500 hover:bg-stone-900/50 transition-all duration-300 overflow-hidden"
+          <Button
+            asChild
+            variant="outline"
+            color="gray"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-stone-700 text-stone-300 hover:text-white hover:border-stone-500 hover:bg-stone-900/50 transition-all duration-300 overflow-hidden"
           >
-            <span className="relative z-10">View the Portfolio</span>
-            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-          </a>
+            <a href="#portfolio">
+              <span className="relative z-10">View the Portfolio</span>
+              <ArrowRightIcon className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
         </div>
 
         {/* Logos Section */}
@@ -62,23 +111,23 @@ const Hero: React.FC = () => {
           <p className="text-stone-600 text-sm font-medium uppercase tracking-widest mb-8">Powering Technologies For</p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             <div className="flex items-center gap-2 group cursor-pointer">
-               <Hexagon className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
+               <Component2Icon className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
                <span className="text-xl font-bold text-stone-300 group-hover:text-white transition-colors">Vercel</span>
             </div>
              <div className="flex items-center gap-2 group cursor-pointer">
-               <Box className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
+               <CubeIcon className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
                <span className="text-xl font-bold text-stone-300 group-hover:text-white transition-colors">Square</span>
             </div>
             <div className="flex items-center gap-2 group cursor-pointer">
-               <Triangle className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
+               <TriangleUpIcon className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
                <span className="text-xl font-bold text-stone-300 group-hover:text-white transition-colors">Airbnb</span>
             </div>
             <div className="flex items-center gap-2 group cursor-pointer">
-               <Zap className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
+               <LightningBoltIcon className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
                <span className="text-xl font-bold text-stone-300 group-hover:text-white transition-colors">Stripe</span>
             </div>
              <div className="flex items-center gap-2 group cursor-pointer">
-               <Circle className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
+               <CircleIcon className="w-6 h-6 text-stone-300 group-hover:text-white transition-colors" />
                <span className="text-xl font-bold text-stone-300 group-hover:text-white transition-colors">Google</span>
             </div>
           </div>
@@ -86,7 +135,7 @@ const Hero: React.FC = () => {
 
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0c0a09] via-[#0c0a09] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[var(--color-background)] via-[var(--color-background)] to-transparent pointer-events-none" />
     </section>
   );
 };

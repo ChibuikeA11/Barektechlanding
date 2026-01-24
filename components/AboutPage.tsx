@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { Button, Card } from '@radix-ui/themes';
 
 const skills = [
   { label: 'Product Strategy', value: 88 },
@@ -18,7 +19,7 @@ const stats = [
 
 const AboutPage: React.FC = () => {
   return (
-    <section className="bg-[#0c0a09] text-stone-200">
+    <section className="bg-background text-stone-200">
       {/* Hero */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(120,113,108,0.25),_transparent_60%)]" />
@@ -39,7 +40,7 @@ const AboutPage: React.FC = () => {
       {/* Story + Image */}
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
-          <div className="rounded-3xl overflow-hidden bg-[#141210] border border-white/5 shadow-2xl">
+          <Card className="rounded-3xl overflow-hidden bg-panel border border-white/5 shadow-2xl">
             <div className="aspect-[5/4] w-full relative">
               <img
                 src="/assets/office-space.png"
@@ -54,7 +55,7 @@ const AboutPage: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Card>
 
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">About Us</p>
@@ -71,9 +72,9 @@ const AboutPage: React.FC = () => {
               From first prototype to scale, we combine market validation, shared infrastructure,
               and disciplined execution to build enduring products.
             </p>
-            <button className="mt-6 inline-flex items-center rounded-full border border-stone-700 px-6 py-3 text-sm font-medium text-stone-200 hover:border-stone-500 hover:text-white transition-colors">
+            <Button variant="outline" color="gray" className="mt-6 inline-flex items-center rounded-full border-stone-700 px-6 py-3 text-sm font-medium text-stone-200 hover:border-stone-500 hover:text-white transition-colors">
               Partner With Us
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -81,7 +82,7 @@ const AboutPage: React.FC = () => {
       {/* Skills + Stats */}
       <div className="max-w-6xl mx-auto px-6 lg:px-8 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
-          <div className="bg-[#141210] border border-white/5 rounded-3xl p-6 sm:p-8">
+          <Card className="bg-panel border border-white/5 rounded-3xl p-6 sm:p-8">
             <h3 className="text-2xl font-semibold text-stone-100">Our Skills</h3>
             <p className="text-stone-500 text-sm mt-3">
               Measured capabilities across the studio that power every new launch.
@@ -102,19 +103,19 @@ const AboutPage: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
 
           <div className="grid grid-cols-2 gap-6">
             {stats.map((stat) => (
-              <div
+              <Card
                 key={stat.label}
-                className="bg-[#141210] border border-white/5 rounded-2xl p-5 text-center"
+                className="bg-panel border border-white/5 rounded-2xl p-5 text-center"
               >
                 <p className="text-2xl font-bold text-stone-100">{stat.value}</p>
                 <p className="text-xs uppercase tracking-[0.25em] text-stone-500 mt-2">
                   {stat.label}
                 </p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -122,7 +123,7 @@ const AboutPage: React.FC = () => {
 
       {/* CTA */}
       <div className="max-w-6xl mx-auto px-6 lg:px-8 pb-24">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#141210]">
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-panel">
           <div className="absolute inset-0 bg-[linear-gradient(110deg,_rgba(12,10,9,0.6),_rgba(41,37,36,0.6),_rgba(12,10,9,0.6))]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.15),_transparent_55%)]" />
 
@@ -134,9 +135,9 @@ const AboutPage: React.FC = () => {
             <p className="text-stone-400 mt-4 max-w-2xl mx-auto">
               We are a portfolio of software startups, building scalable software products that drive innovation and growth.
             </p>
-            <button className="mt-8 inline-flex items-center rounded-full bg-stone-100 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-white transition-colors">
+            <Button className="mt-8 inline-flex items-center rounded-full bg-stone-100 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-white transition-colors">
               Explore the Portfolio
-            </button>
+            </Button>
           </div>
         </div>
       </div>

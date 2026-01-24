@@ -1,9 +1,24 @@
+@import "maplibre-gl/dist/maplibre-gl.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   margin: 0;
-  background-color: #0c0a09;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.maplibregl-popup-content {
+  background: rgba(12, 10, 9, 0.9);
+  border: 1px solid #292524;
   color: #e7e5e4;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgba(12, 10, 9, 0.9);
 }

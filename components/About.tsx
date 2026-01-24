@@ -1,9 +1,10 @@
 import React from 'react';
-import { ShieldCheck, LineChart, Cpu, Zap } from 'lucide-react';
+import { BarChartIcon, LightningBoltIcon, MixIcon } from '@radix-ui/react-icons';
+import { Card } from '@radix-ui/themes';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-[#0c0a09] relative overflow-hidden">
+    <section id="about" className="py-24 bg-background relative overflow-hidden">
       
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -35,11 +36,11 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           
           {/* Card 1: Market Validation Protocol */}
-          <div className="bg-[#141210] border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
+          <Card className="bg-panel border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
             <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                     <div className="p-2.5 bg-stone-900 border border-stone-800 rounded-lg text-stone-300 group-hover:text-white transition-colors shadow-lg">
-                        <LineChart size={20} />
+                        <BarChartIcon width={20} height={20} />
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-stone-200">The Filter</h3>
                 </div>
@@ -49,22 +50,58 @@ const About: React.FC = () => {
                 </p>
             </div>
             
-            {/* Visual: Bar Chart */}
-            <div className="mt-auto pt-8 relative h-40 w-full flex items-end justify-between gap-2 lg:gap-4 opacity-40 group-hover:opacity-60 transition-opacity">
-                <div className="w-full bg-stone-800/50 rounded-t-sm h-[20%] border-t border-white/5"></div>
-                <div className="w-full bg-stone-800/50 rounded-t-sm h-[35%] border-t border-white/5"></div>
-                <div className="w-full bg-stone-800/80 rounded-t-sm h-[15%] border-t border-white/5"></div>
-                <div className="w-full bg-stone-700/80 rounded-t-sm h-[50%] border-t border-white/10"></div>
-                <div className="w-full bg-gradient-to-t from-stone-600 to-stone-400 rounded-t-sm h-[85%] shadow-[0_0_15px_rgba(255,255,255,0.1)]"></div>
+            {/* Visual: Graph Illustration */}
+            <div className="mt-auto pt-8 relative h-40 w-full opacity-50 group-hover:opacity-70 transition-opacity">
+              <svg
+                viewBox="0 0 360 140"
+                className="w-full h-full"
+                role="img"
+                aria-label="Validation growth graph"
+              >
+                <defs>
+                  <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="rgba(168,162,158,0.2)" />
+                    <stop offset="100%" stopColor="rgba(245,245,244,0.8)" />
+                  </linearGradient>
+                  <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="rgba(214,211,209,0.35)" />
+                    <stop offset="100%" stopColor="rgba(12,10,9,0)" />
+                  </linearGradient>
+                </defs>
+
+                <rect x="0" y="0" width="360" height="140" fill="transparent" />
+                <path
+                  d="M10 118 L70 96 L120 102 L170 78 L220 84 L280 52 L340 34"
+                  stroke="url(#lineGlow)"
+                  strokeWidth="3"
+                  fill="none"
+                />
+                <path
+                  d="M10 118 L70 96 L120 102 L170 78 L220 84 L280 52 L340 34 L340 130 L10 130 Z"
+                  fill="url(#areaFill)"
+                />
+                <g stroke="rgba(120,113,108,0.35)" strokeWidth="1">
+                  <line x1="10" y1="118" x2="340" y2="118" />
+                  <line x1="10" y1="90" x2="340" y2="90" />
+                  <line x1="10" y1="62" x2="340" y2="62" />
+                  <line x1="10" y1="34" x2="340" y2="34" />
+                </g>
+                <g fill="rgba(245,245,244,0.9)">
+                  <circle cx="70" cy="96" r="3.5" />
+                  <circle cx="170" cy="78" r="3.5" />
+                  <circle cx="280" cy="52" r="3.5" />
+                  <circle cx="340" cy="34" r="4" />
+                </g>
+              </svg>
             </div>
-          </div>
+          </Card>
 
           {/* Card 2: Capital & Velocity */}
-          <div className="bg-[#141210] border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
+          <Card className="bg-panel border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
              <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                     <div className="p-2.5 bg-stone-900 border border-stone-800 rounded-lg text-stone-300 group-hover:text-white transition-colors shadow-lg">
-                        <Zap size={20} />
+                        <LightningBoltIcon width={20} height={20} />
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-stone-200">The Engine</h3>
                 </div>
@@ -82,14 +119,14 @@ const About: React.FC = () => {
                     </div>
                 </div>
             </div>
-          </div>
+          </Card>
 
           {/* Card 3: Symbiotic Intelligence */}
-          <div className="bg-[#141210] border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
+          <Card className="bg-panel border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
              <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                     <div className="p-2.5 bg-stone-900 border border-stone-800 rounded-lg text-stone-300 group-hover:text-white transition-colors shadow-lg">
-                        <Cpu size={20} />
+                        <MixIcon width={20} height={20} />
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-stone-200">The Network</h3>
                 </div>
@@ -116,7 +153,7 @@ const About: React.FC = () => {
                 <div className="absolute top-1/2 left-1/2 w-16 h-[1px] bg-gradient-to-r from-transparent via-stone-500 to-transparent -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
                 <div className="absolute top-1/2 left-1/2 w-16 h-[1px] bg-gradient-to-r from-transparent via-stone-500 to-transparent -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
             </div>
-          </div>
+          </Card>
 
         </div>
       </div>

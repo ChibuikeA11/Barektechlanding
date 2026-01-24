@@ -1,10 +1,22 @@
 
 import React from 'react';
-import { ArrowUpRight, Scissors, Shirt, Globe, Activity, Play, Sparkles, HeartPulse, Zap } from 'lucide-react';
+import {
+  ArrowTopRightIcon,
+  ScissorsIcon,
+  SewingPinIcon,
+  GlobeIcon,
+  ActivityLogIcon,
+  MagicWandIcon,
+  HeartIcon,
+  LightningBoltIcon
+} from '@radix-ui/react-icons';
+import { Card } from '@radix-ui/themes';
 
 const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-24 bg-[#0c0a09] relative">
+    <section id="portfolio" className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none bg-ambient-glow opacity-60" />
+      <div className="absolute -top-40 right-[-10%] w-[520px] h-[520px] rounded-full bg-gradient-to-br from-indigo-500/10 to-transparent blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Central Header - Matching About Us Style */}
@@ -26,17 +38,17 @@ const Portfolio: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Card 1: Trimly */}
-          <div className="group relative overflow-hidden rounded-3xl bg-[#141210] border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
             {/* Ambient Bg */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-stone-700/20 transition-colors" />
             
             <div className="relative z-10">
                <div className="flex justify-between items-start mb-6">
                   <div className="w-12 h-12 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-200 group-hover:scale-105 transition-transform duration-300">
-                     <Scissors size={20} />
+                     <ScissorsIcon width={20} height={20} />
                   </div>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/50 border border-stone-800 text-[10px] font-bold uppercase tracking-wider text-stone-500">
-                    <Sparkles size={10} className="text-stone-400" /> Video AI
+                    <MagicWandIcon width={10} height={10} className="text-stone-400" /> Video AI
                   </span>
                </div>
                
@@ -54,17 +66,17 @@ const Portfolio: React.FC = () => {
                   ))}
                </div>
             </div>
-          </div>
+          </Card>
 
           {/* Card 2: GlamUp */}
-          <div className="group relative overflow-hidden rounded-3xl bg-[#141210] border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
              {/* Ambient Bg */}
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-stone-700/20 transition-colors" />
 
              <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
                     <div className="w-12 h-12 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-200 group-hover:scale-105 transition-transform duration-300">
-                      <Shirt size={20} />
+                      <SewingPinIcon width={20} height={20} />
                     </div>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/50 border border-stone-800 text-[10px] font-bold uppercase tracking-wider text-stone-500">
                       Fashion
@@ -84,17 +96,17 @@ const Portfolio: React.FC = () => {
                 <div className="w-8 h-8 rounded-full bg-[#44403c] border border-stone-700" />
                 <div className="w-8 h-8 rounded-full bg-stone-900 border border-stone-700 border-dashed flex items-center justify-center text-[10px] text-stone-500">+</div>
              </div>
-          </div>
+          </Card>
 
           {/* Card 3: Genna */}
-          <div className="group relative overflow-hidden rounded-3xl bg-[#141210] border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
              <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
                     <div className="w-12 h-12 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-200 group-hover:scale-105 transition-transform duration-300">
-                      <Globe size={20} />
+                      <GlobeIcon width={20} height={20} />
                     </div>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/50 border border-stone-800 text-[10px] font-bold uppercase tracking-wider text-stone-500">
-                       <Zap size={10} className="text-stone-400" /> Creator OS
+                       <LightningBoltIcon width={10} height={10} className="text-stone-400" /> Creator OS
                     </span>
                 </div>
                 
@@ -115,20 +127,20 @@ const Portfolio: React.FC = () => {
                     </div>
                 </div>
              </div>
-          </div>
+          </Card>
 
           {/* Card 4: NeuroCare */}
-          <div className="group relative overflow-hidden rounded-3xl bg-[#141210] border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
              {/* Ambient Bg */}
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-stone-800/20 blur-[60px] rounded-full pointer-events-none" />
 
              <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
                     <div className="w-12 h-12 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-200 group-hover:scale-105 transition-transform duration-300">
-                      <Activity size={20} />
+                      <ActivityLogIcon width={20} height={20} />
                     </div>
                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-stone-900/50 border border-stone-800 text-[10px] font-bold uppercase tracking-wider text-stone-500">
-                       <HeartPulse size={10} className="text-stone-400" /> Health AI
+                       <HeartIcon width={10} height={10} className="text-stone-400" /> Health AI
                     </span>
                 </div>
                 
@@ -145,7 +157,7 @@ const Portfolio: React.FC = () => {
                 <div className="h-8 w-4 border-r border-b border-stone-400 transform -rotate-12 -translate-y-2" />
                 <div className="h-[1px] flex-1 bg-stone-600" />
              </div>
-          </div>
+          </Card>
 
         </div>
         
@@ -154,7 +166,7 @@ const Portfolio: React.FC = () => {
             <a href="#" className="group flex items-center gap-2 text-stone-400 hover:text-white transition-colors text-sm font-medium">
                 View full portfolio
                 <span className="bg-stone-800 p-1 rounded-full group-hover:bg-stone-700 transition-colors">
-                    <ArrowUpRight size={14} />
+                    <ArrowTopRightIcon width={14} height={14} />
                 </span>
             </a>
          </div>

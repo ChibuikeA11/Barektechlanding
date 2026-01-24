@@ -2,7 +2,7 @@ import React from 'react';
 
 const Mission: React.FC = () => {
   return (
-    <section id="mission" className="py-32 bg-[#0c0a09] text-white relative overflow-hidden border-t border-stone-900">
+    <section id="mission" className="py-32 bg-background text-white relative overflow-hidden border-t border-stone-900">
       {/* Decorative Gradients */}
       <div className="absolute top-0 left-1/4 w-1/2 h-full bg-stone-800/10 blur-[120px] pointer-events-none" />
 
