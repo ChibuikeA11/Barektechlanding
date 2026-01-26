@@ -6,10 +6,12 @@ import { ArrowRightIcon, PlusIcon, MinusIcon, ReloadIcon } from '@radix-ui/react
 import { Button, IconButton } from '@radix-ui/themes';
 
 const locations = [
-  { id: 'ny', label: 'New York', sub: 'Global HQ', lat: 40.7128, lng: -74.0060, isHQ: true },
-  { id: 'sf', label: 'San Francisco', sub: 'Operational', lat: 37.7749, lng: -122.4194 },
-  { id: 'ldn', label: 'London', sub: 'Operational', lat: 51.5074, lng: -0.1278 },
-  { id: 'ber', label: 'Berlin', sub: 'Operational', lat: 52.52, lng: 13.4050 },
+  { id: 'ny', label: 'New York', sub: 'Global HQ', lat: 40.7128, lng: -74.0060, isHQ: true, highlight: true },
+  { id: 'sf', label: 'San Francisco', sub: 'Operational', lat: 37.7749, lng: -122.4194, highlight: true },
+  { id: 'ldn', label: 'London', sub: 'Operational', lat: 51.5074, lng: -0.1278, highlight: true },
+  { id: 'ber', label: 'Berlin', sub: 'Operational', lat: 52.52, lng: 13.4050, highlight: true },
+  { id: 'lag', label: 'Lagos', sub: 'Operational', lat: 6.5244, lng: 3.3792, highlight: true },
+  { id: 'nai', label: 'Nairobi', sub: 'Operational', lat: -1.2921, lng: 36.8219, highlight: true },
   { id: 'sin', label: 'Singapore', sub: 'Operational', lat: 1.3521, lng: 103.8198 },
   { id: 'syd', label: 'Sydney', sub: 'Operational', lat: -33.8688, lng: 151.2093 }
 ];
@@ -46,6 +48,9 @@ const GlobalReach: React.FC = () => {
         ? '0 0 0 6px rgba(245,245,244,0.12), 0 0 12px rgba(245,245,244,0.45)'
         : '0 0 0 4px rgba(120,113,108,0.15)';
       el.style.cursor = 'pointer';
+      if (loc.highlight) {
+        el.classList.add('reach-pulse');
+      }
 
       const popup = new maplibregl.Popup({
         closeButton: false,
