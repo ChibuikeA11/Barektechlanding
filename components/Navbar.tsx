@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
-import { Button, IconButton } from '@radix-ui/themes';
+import { IconButton } from '@radix-ui/themes';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,14 +27,14 @@ const Navbar: React.FC = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-b border-stone-800 py-3'
+          ? 'bg-white/5 backdrop-blur-xl border-b border-white/10 py-3'
           : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-10">
           {/* Left: Logo */}
-          <a href="#" className="flex items-center gap-2 group z-20 relative">
+          <a href="/" className="flex items-center gap-2 group z-20 relative">
             <img
               src="/BarekIcon.png"
               alt="Barek"
@@ -53,17 +53,6 @@ const Navbar: React.FC = () => {
                 {link.name}
               </a>
             ))}
-          </div>
-
-          {/* Right: CTA (Desktop) */}
-          <div className="hidden md:flex items-center z-20 relative">
-            <Button
-              variant="soft"
-              color="gray"
-              className="px-6 py-2 text-sm font-medium bg-stone-100/10 text-stone-100 hover:bg-stone-100/20 border border-stone-100/10 backdrop-blur-sm"
-            >
-              Portfolio
-            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -93,9 +82,6 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <div className="h-px bg-stone-800 w-full my-2" />
-            <Button className="w-full py-3 bg-stone-100 text-stone-900 hover:bg-white">
-              Portfolio
-            </Button>
           </div>
         </div>
       )}

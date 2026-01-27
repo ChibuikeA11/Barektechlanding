@@ -20,10 +20,8 @@ const About: React.FC = () => {
             <span className="text-xs font-medium text-stone-400 uppercase tracking-widest">The Studio Model</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-b from-stone-100 to-stone-500">
-              The Operating System for Innovation
-            </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-stone-100">
+            The Operating System for Innovation
           </h2>
           
           <p className="text-lg text-stone-400 max-w-2xl mx-auto leading-relaxed">
@@ -36,7 +34,7 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           
           {/* Card 1: Market Validation Protocol */}
-          <Card className="bg-panel border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
+          <Card className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.35)] rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
             <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                     <div className="p-2.5 bg-stone-900 border border-stone-800 rounded-lg text-stone-300 group-hover:text-white transition-colors shadow-lg">
@@ -97,7 +95,7 @@ const About: React.FC = () => {
           </Card>
 
           {/* Card 2: Capital & Velocity */}
-          <Card className="bg-panel border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
+          <Card className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.35)] rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
              <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                     <div className="p-2.5 bg-stone-900 border border-stone-800 rounded-lg text-stone-300 group-hover:text-white transition-colors shadow-lg">
@@ -122,7 +120,7 @@ const About: React.FC = () => {
           </Card>
 
           {/* Card 3: Symbiotic Intelligence */}
-          <Card className="bg-panel border border-white/5 rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
+          <Card className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.35)] rounded-3xl p-6 lg:p-8 hover:border-white/10 transition-colors duration-500 group overflow-hidden relative min-h-[420px] flex flex-col">
              <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
                     <div className="p-2.5 bg-stone-900 border border-stone-800 rounded-lg text-stone-300 group-hover:text-white transition-colors shadow-lg">
@@ -150,8 +148,8 @@ const About: React.FC = () => {
                 <div className="absolute top-1/2 left-0 w-1.5 h-1.5 bg-stone-600 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
                 
                 {/* Connecting Lines (CSS) */}
-                <div className="absolute top-1/2 left-1/2 w-16 h-[1px] bg-gradient-to-r from-transparent via-stone-500 to-transparent -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
-                <div className="absolute top-1/2 left-1/2 w-16 h-[1px] bg-gradient-to-r from-transparent via-stone-500 to-transparent -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+                <div className="absolute top-1/2 left-1/2 w-16 h-[1px] bg-stone-500/60 -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
+                <div className="absolute top-1/2 left-1/2 w-16 h-[1px] bg-stone-500/60 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
             </div>
           </Card>
 

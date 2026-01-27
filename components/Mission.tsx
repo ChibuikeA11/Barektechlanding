@@ -10,7 +10,7 @@ const Mission: React.FC = () => {
         <div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-10 text-stone-100">
               Empowering the next wave <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-stone-400 to-stone-600">
+              <span className="text-stone-400">
                 of digital innovation.
               </span>
             </h2>

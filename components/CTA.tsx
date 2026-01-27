@@ -4,11 +4,8 @@ import { Button } from '@radix-ui/themes';
 const CTA: React.FC = () => {
   return (
     <section className="py-24 bg-background border-t border-stone-900 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-ambient-glow opacity-50" />
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        <div className="bg-panel rounded-[2.5rem] p-12 md:p-20 text-center border border-stone-800 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-stone-700 via-stone-500 to-stone-700" />
-            
+        <div className="bg-white/5 backdrop-blur-2xl rounded-[2.5rem] p-12 md:p-20 text-center border border-white/10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] relative overflow-hidden">
             <h2 className="text-3xl sm:text-5xl font-bold text-stone-100 mb-6">
                 Build with a productized studio, not a services agency.
             </h2>

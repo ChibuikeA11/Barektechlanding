@@ -2,6 +2,7 @@ import { DM_Sans, Inter } from 'next/font/google';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import './globals.css';
+import GlowLayer from '../components/GlowLayer';
 
 export const metadata = {
   title: 'Barek Technologies | Building the Future',
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans">
         <Theme appearance="dark" accentColor="gray" radius="large">
           <div className="relative min-h-screen bg-background text-text">
+            <GlowLayer />
             <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.04] mix-blend-overlay" />
             <div className="relative z-10">
               {children}

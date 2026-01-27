@@ -43,7 +43,6 @@ const Hero: React.FC = () => {
     <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-background pt-32 pb-20">
       
       {/* Background Ambience */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-stone-800/20 to-transparent pointer-events-none opacity-50 blur-3xl" />
       <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-stone-800/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-[20%] left-[-10%] w-96 h-96 bg-stone-800/20 rounded-full blur-[100px] pointer-events-none" />
 
@@ -51,14 +50,12 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 pointer-events-none">
         <div
           ref={orbRef}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full opacity-60 blur-[120px] bg-[radial-gradient(circle,_rgba(120,113,108,0.55),_rgba(12,10,9,0)_65%)]"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full opacity-40 blur-[120px] bg-stone-700/40"
         />
       </div>
 
-      {/* Honeycomb Pattern Overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" 
-           style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }}>
-      </div>
+      {/* Subtle texture without gradients */}
+      <div className="absolute inset-0 opacity-[0.02] bg-noise" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full text-center">
         
@@ -75,12 +72,12 @@ const Hero: React.FC = () => {
         {/* Main Heading */}
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-8 max-w-5xl mx-auto leading-[0.95] animate-[slideUp_0.8s_ease-out]">
           <span className="text-stone-500">Where</span>{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-stone-200 to-stone-500">
+          <span className="text-stone-100">
             Intelligence
           </span>
           <br />
           <span className="text-stone-500">Meets</span>{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-stone-200 to-stone-500">
+          <span className="text-stone-100">
             Innovation
           </span>
         </h1>
@@ -135,7 +132,6 @@ const Hero: React.FC = () => {
 
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[var(--color-background)] via-[var(--color-background)] to-transparent pointer-events-none" />
     </section>
   );
 };

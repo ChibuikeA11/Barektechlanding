@@ -50,7 +50,6 @@ const team = [
 const Team: React.FC = () => {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-ambient-glow opacity-50" />
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-stone-800/10 blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-[-10%] w-72 h-72 bg-stone-700/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -67,7 +66,7 @@ const Team: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 lg:gap-10 items-start mb-16 lg:mb-20">
-          <Card className="bg-panel border border-white/5 rounded-[1.75rem] p-3 sm:p-4 shadow-2xl">
+          <Card className="bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_28px_80px_rgba(0,0,0,0.45)] rounded-[1.75rem] p-3 sm:p-4 shadow-2xl">
             <div className="rounded-[1.4rem] overflow-hidden bg-stone-900 relative flex items-center justify-center">
               <img
                 src={leadership.image}
@@ -78,11 +77,11 @@ const Team: React.FC = () => {
                   img.src = '/assets/team/placeholder.svg';
                 }}
               />
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute inset-0 pointer-events-none bg-black/25" />
             </div>
           </Card>
 
-          <Card className="bg-panel border border-white/5 rounded-[1.75rem] p-6 sm:p-7 lg:p-8 text-stone-100 shadow-2xl">
+          <Card className="bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_28px_80px_rgba(0,0,0,0.45)] rounded-[1.75rem] p-6 sm:p-7 lg:p-8 text-stone-100 shadow-2xl">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-900/80 text-xs font-semibold uppercase tracking-widest text-stone-400 border border-stone-800">
               {leadership.role}
             </div>
@@ -100,7 +99,7 @@ const Team: React.FC = () => {
           <h3 className="text-2xl font-semibold text-stone-100 mb-8">Our Team</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {team.slice(0, 3).map((member) => (
-              <Card key={member.name} className="bg-surface border border-white/5 rounded-[1.25rem] p-4 sm:p-5 shadow-xl">
+              <Card key={member.name} className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_22px_70px_rgba(0,0,0,0.4)] rounded-[1.25rem] p-4 sm:p-5 shadow-xl">
                 <div className="h-44 sm:h-48 lg:h-52 rounded-xl bg-stone-900/90 mb-4 overflow-hidden relative flex items-center justify-center">
                   <img
                     src={member.image}
@@ -111,7 +110,7 @@ const Team: React.FC = () => {
                       img.src = '/assets/team/placeholder.svg';
                     }}
                   />
-                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 to-transparent" />
+                  <div className="absolute inset-0 pointer-events-none bg-black/25" />
                 </div>
                 <p className="text-lg font-semibold text-stone-100">{member.name}</p>
                 <p className="text-sm text-stone-400 mb-3">{member.role}</p>
@@ -123,7 +122,7 @@ const Team: React.FC = () => {
           <div className="mt-8 lg:mt-10 max-w-4xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               {team.slice(3).map((member) => (
-                <Card key={member.name} className="bg-surface border border-white/5 rounded-[1.25rem] p-4 sm:p-5 shadow-xl">
+                <Card key={member.name} className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_22px_70px_rgba(0,0,0,0.4)] rounded-[1.25rem] p-4 sm:p-5 shadow-xl">
                   <div className="h-44 sm:h-48 lg:h-52 rounded-xl bg-stone-900/90 mb-4 overflow-hidden relative flex items-center justify-center">
                     <img
                       src={member.image}
@@ -134,7 +133,7 @@ const Team: React.FC = () => {
                         img.src = '/assets/team/placeholder.svg';
                       }}
                     />
-                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 to-transparent" />
+                    <div className="absolute inset-0 pointer-events-none bg-black/25" />
                   </div>
                   <p className="text-lg font-semibold text-stone-100">{member.name}</p>
                   <p className="text-sm text-stone-400 mb-3">{member.role}</p>

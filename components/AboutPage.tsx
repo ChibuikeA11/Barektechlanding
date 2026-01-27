@@ -22,9 +22,8 @@ const AboutPage: React.FC = () => {
     <section className="bg-background text-stone-200">
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(120,113,108,0.25),_transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(12,10,9,0.9),_rgba(12,10,9,0.4),_rgba(12,10,9,0.9))]" />
-        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_1px_1px,_rgba(255,255,255,0.12)_1px,_transparent_0)] bg-[length:36px_36px]" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 opacity-[0.04] bg-noise" />
 
         <div className="relative max-w-6xl mx-auto px-6 lg:px-8 py-24 lg:py-32 text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-stone-400">Barek Technologies</p>
@@ -47,7 +46,7 @@ const AboutPage: React.FC = () => {
                 alt="Barek office space"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(0,0,0,0.2),_transparent_60%)]" />
+              <div className="absolute inset-0 bg-black/20" />
               <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-black/40 border border-white/10 p-4 backdrop-blur-sm">
                 <p className="text-xs uppercase tracking-[0.3em] text-stone-300">Studio Floor</p>
                 <p className="text-sm text-stone-200 mt-2">
@@ -96,7 +95,7 @@ const AboutPage: React.FC = () => {
                   </div>
                   <div className="h-1.5 w-full rounded-full bg-stone-900">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-stone-300 to-stone-500"
+                      className="h-full rounded-full bg-stone-400"
                       style={{ width: `${skill.value}%` }}
                     />
                   </div>
@@ -124,8 +123,8 @@ const AboutPage: React.FC = () => {
       {/* CTA */}
       <div className="max-w-6xl mx-auto px-6 lg:px-8 pb-24">
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-panel">
-          <div className="absolute inset-0 bg-[linear-gradient(110deg,_rgba(12,10,9,0.6),_rgba(41,37,36,0.6),_rgba(12,10,9,0.6))]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.15),_transparent_55%)]" />
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 opacity-[0.05] bg-noise" />
 
           <div className="relative px-6 sm:px-10 py-14 text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-stone-500">Our Focus</p>

@@ -15,8 +15,6 @@ import { Card } from '@radix-ui/themes';
 const Portfolio: React.FC = () => {
   return (
     <section id="portfolio" className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-ambient-glow opacity-60" />
-      <div className="absolute -top-40 right-[-10%] w-[520px] h-[520px] rounded-full bg-gradient-to-br from-indigo-500/10 to-transparent blur-3xl pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Central Header - Matching About Us Style */}
@@ -24,10 +22,8 @@ const Portfolio: React.FC = () => {
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-stone-900 border border-stone-800 mb-6">
              <span className="text-xs font-medium text-stone-400 uppercase tracking-widest">Our Ecosystem</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-b from-stone-100 to-stone-500">
-              Selected Ventures
-            </span>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-stone-100">
+            Selected Ventures
           </h2>
           <p className="text-lg text-stone-400 max-w-2xl mx-auto leading-relaxed">
              A curated selection of high-impact startups built, launched, and scaled from our studio.
@@ -38,7 +34,7 @@ const Portfolio: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           {/* Card 1: Trimly */}
-          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.4)] hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
             {/* Ambient Bg */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-stone-800/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-stone-700/20 transition-colors" />
             
@@ -69,7 +65,7 @@ const Portfolio: React.FC = () => {
           </Card>
 
           {/* Card 2: GlamUp */}
-          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.4)] hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
              {/* Ambient Bg */}
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-stone-800/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-stone-700/20 transition-colors" />
 
@@ -99,7 +95,7 @@ const Portfolio: React.FC = () => {
           </Card>
 
           {/* Card 3: Genna */}
-          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.4)] hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
              <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
                     <div className="w-12 h-12 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-200 group-hover:scale-105 transition-transform duration-300">
@@ -130,7 +126,7 @@ const Portfolio: React.FC = () => {
           </Card>
 
           {/* Card 4: NeuroCare */}
-          <Card className="group relative overflow-hidden rounded-3xl bg-panel border border-white/5 hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
+          <Card className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_24px_70px_rgba(0,0,0,0.4)] hover:border-white/10 transition-colors duration-500 min-h-[360px] p-8 flex flex-col justify-between">
              {/* Ambient Bg */}
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-stone-800/20 blur-[60px] rounded-full pointer-events-none" />
 

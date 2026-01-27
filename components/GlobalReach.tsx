@@ -132,7 +132,6 @@ const GlobalReach: React.FC = () => {
 
   return (
     <section className="py-24 bg-background relative overflow-hidden border-t border-white/5">
-      <div className="absolute inset-0 pointer-events-none bg-ambient-glow opacity-50" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -155,9 +154,8 @@ const GlobalReach: React.FC = () => {
 
         {/* Map Container */}
         <div 
-            className="relative w-full aspect-[16/9] md:aspect-[2/1] bg-background rounded-3xl border border-white/5 shadow-2xl overflow-hidden mb-20"
+            className="relative w-full aspect-[16/9] md:aspect-[2/1] bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-[0_30px_90px_rgba(0,0,0,0.5)] overflow-hidden mb-20"
         >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70 pointer-events-none z-10" />
             <div ref={mapContainerRef} className="absolute inset-0" />
             
             {/* Controls */}
@@ -209,7 +207,7 @@ const GlobalReach: React.FC = () => {
                </div>
            </div>
            
-           <Button className="px-8 py-3 rounded-lg bg-panel border border-stone-800 text-stone-300 font-bold text-sm hover:bg-stone-800 hover:text-white hover:border-stone-600 transition-all duration-300 flex items-center gap-2 group shadow-lg">
+           <Button className="px-8 py-3 rounded-lg bg-white/5 backdrop-blur-xl border border-white/10 text-stone-300 font-bold text-sm hover:bg-stone-800 hover:text-white hover:border-stone-600 transition-all duration-300 flex items-center gap-2 group shadow-lg">
                VIEW OUR LOCATIONS
                <ArrowRightIcon width={16} height={16} className="group-hover:translate-x-1 transition-transform" />
            </Button>
