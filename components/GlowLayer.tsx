@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const baseTransition = (duration: number) => ({
   duration,
@@ -11,15 +11,52 @@ const baseTransition = (duration: number) => ({
 });
 
 const GlowLayer: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+
+  // Smooth spring for scroll-based movement
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 50,
+    damping: 20
+  });
+
+  // Each orb moves at different speeds for depth illusion
+  const orb1Y = useTransform(smoothScroll, [0, 1], [0, 300]);
+  const orb2Y = useTransform(smoothScroll, [0, 1], [0, 200]);
+  const orb3Y = useTransform(smoothScroll, [0, 1], [0, 150]);
+
+  // Scale changes for depth effect
+  const orb1Scale = useTransform(smoothScroll, [0, 0.5, 1], [1, 1.1, 0.9]);
+  const orb2Scale = useTransform(smoothScroll, [0, 0.5, 1], [1, 0.95, 1.05]);
+
+  // Global opacity fades as user scrolls down
+  const globalOpacity = useTransform(
+    smoothScroll,
+    [0, 0.3, 0.7, 1],
+    [0.8, 1, 0.6, 0.3]
+  );
+
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <motion.div
+      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      style={{ opacity: globalOpacity }}
+    >
       <div className="absolute inset-0 opacity-80 [filter:blur(90px)]">
+        {/* Orb A - Yellow/Orange gradient (slowest, far depth) */}
         <motion.svg
           aria-hidden
           viewBox="0 0 800 600"
           className="absolute -left-44 -top-36 h-[560px] w-[560px]"
-          animate={{ x: [0, 40, -20], y: [0, -30, 20], scale: [1, 1.06, 0.98] }}
+          animate={{
+            x: [0, 40, -20],
+            y: [0, -30, 20],
+            scale: [1, 1.06, 0.98]
+          }}
           transition={baseTransition(28)}
+          style={{
+            y: orb1Y,
+            scale: orb1Scale,
+            willChange: "transform"
+          }}
         >
           <defs>
             <radialGradient id="glowA" cx="50%" cy="50%" r="60%">
@@ -34,12 +71,22 @@ const GlowLayer: React.FC = () => {
           />
         </motion.svg>
 
+        {/* Orb B - Teal/Blue gradient (medium depth) */}
         <motion.svg
           aria-hidden
           viewBox="0 0 800 600"
           className="absolute right-[-200px] top-[-140px] h-[600px] w-[600px]"
-          animate={{ x: [0, -50, 30], y: [0, 40, -20], scale: [1, 0.96, 1.04] }}
+          animate={{
+            x: [0, -50, 30],
+            y: [0, 40, -20],
+            scale: [1, 0.96, 1.04]
+          }}
           transition={baseTransition(34)}
+          style={{
+            y: orb2Y,
+            scale: orb2Scale,
+            willChange: "transform"
+          }}
         >
           <defs>
             <radialGradient id="glowB" cx="50%" cy="50%" r="62%">
@@ -54,12 +101,21 @@ const GlowLayer: React.FC = () => {
           />
         </motion.svg>
 
+        {/* Orb C - Pink/Yellow gradient (near depth) */}
         <motion.svg
           aria-hidden
           viewBox="0 0 800 600"
           className="absolute left-1/2 top-[42%] h-[520px] w-[520px] -translate-x-1/2"
-          animate={{ x: [0, 30, -30], y: [0, -20, 25], scale: [1, 1.03, 0.97] }}
+          animate={{
+            x: [0, 30, -30],
+            y: [0, -20, 25],
+            scale: [1, 1.03, 0.97]
+          }}
           transition={baseTransition(32)}
+          style={{
+            y: orb3Y,
+            willChange: "transform"
+          }}
         >
           <defs>
             <radialGradient id="glowC" cx="50%" cy="50%" r="64%">
@@ -74,7 +130,7 @@ const GlowLayer: React.FC = () => {
           />
         </motion.svg>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
