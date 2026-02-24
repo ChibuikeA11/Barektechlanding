@@ -1,7 +1,7 @@
 import { DM_Sans, Inter } from 'next/font/google';
-import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import './globals.css';
+import { Providers } from '../components/Providers';
 import GlowLayer from '../components/GlowLayer';
 
 export const metadata = {
@@ -28,9 +28,9 @@ const dmSans = DM_Sans({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSans.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${dmSans.variable}`}>
       <body className="font-sans">
-        <Theme appearance="dark" accentColor="gray" radius="large">
+        <Providers>
           <div className="relative min-h-screen bg-background text-text">
             <GlowLayer />
             <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.04] mix-blend-overlay" />
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children}
             </div>
           </div>
-        </Theme>
+        </Providers>
       </body>
     </html>
   );

@@ -1,27 +1,31 @@
 import React from 'react';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { Button } from '@radix-ui/themes';
 
 const CTA: React.FC = () => {
   return (
-    <section className="py-24 bg-background border-t border-stone-900 relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        <div className="bg-white/5 backdrop-blur-2xl rounded-[2.5rem] p-12 md:p-20 text-center border border-white/10 shadow-[0_30px_90px_rgba(0,0,0,0.45)] relative overflow-hidden">
-            <h2 className="text-3xl sm:text-5xl font-bold text-stone-100 mb-6">
-                Build with a productized studio, not a services agency.
-            </h2>
-            <p className="text-lg text-stone-400 max-w-2xl mx-auto mb-10">
-                Explore our portfolio or apply to partner on a new venture with our team.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button className="px-8 py-4 bg-stone-100 text-stone-900 rounded-full font-medium hover:bg-white transition-all shadow-xl hover:-translate-y-1">
-                    View Portfolio
-                </Button>
-                <Button variant="outline" color="gray" className="px-8 py-4 bg-transparent text-stone-300 border-stone-700 rounded-full font-medium hover:bg-stone-800 transition-all hover:border-stone-500">
-                    Founder Partnership
-                </Button>
-            </div>
-        </div>
+    <section id="contact" className="py-32 bg-background border-t border-c-line-3 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-c-fg mb-6 tracking-tight">
+          Build with a productized studio,
+          <br />
+          <span className="text-c-fg-5">not a services agency.</span>
+        </h2>
+        <p className="text-lg text-c-fg-4 max-w-2xl mb-10 leading-relaxed">
+          Explore our portfolio or apply to partner on a new venture with our team.
+        </p>
+
+        <Button
+          asChild
+          variant="outline"
+          color="gray"
+          className="group inline-flex items-center gap-3 px-8 py-4 bg-transparent border-c-line-2 text-c-fg-3 hover:text-c-fg-em hover:border-c-fg-5 transition-all duration-300"
+        >
+          <a href="mailto:hello@barek.studio">
+            <span>Partner with Us</span>
+            <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </Button>
       </div>
     </section>
   );
