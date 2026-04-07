@@ -7,11 +7,9 @@ import {
   useTransform,
   useSpring
 } from "framer-motion";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import { Button } from "@radix-ui/themes";
+import { ArrowRightIcon, ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import { Particles } from "./magicui/particles";
-import { TextAnimate } from "./magicui/text-animate";
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,18 +40,34 @@ const Hero: React.FC = () => {
       ref={containerRef}
       className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-background pt-32 pb-20"
     >
-      {/* Particle background */}
       <Particles
         className="absolute inset-0"
-        quantity={60}
+        quantity={40}
         color={particleColor}
         ease={80}
-        staticity={40}
-        size={0.5}
+        staticity={50}
+        size={0.4}
         refresh={!isDark}
       />
 
       <div className="absolute inset-0 opacity-[0.02] bg-noise" />
+
+      {/* Accent elliptic gradient — top right */}
+      <div
+        className="absolute -top-[20%] -right-[10%] w-[800px] h-[500px] pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at center, var(--c-accent-soft) 0%, transparent 70%)",
+          opacity: 0.6,
+        }}
+      />
+      {/* Accent elliptic gradient — bottom left */}
+      <div
+        className="absolute -bottom-[15%] -left-[15%] w-[600px] h-[400px] pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at center, var(--c-accent-soft) 0%, transparent 65%)",
+          opacity: 0.4,
+        }}
+      />
 
       <motion.div
         className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full text-center"
@@ -67,87 +81,93 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--c-inset)] border border-c-icon-border backdrop-blur-md shadow-card">
-            <div className="w-2 h-2 rounded-full bg-c-dot" />
+            <div className="w-2 h-2 rounded-full bg-accent" />
             <span className="text-xs font-semibold text-c-fg-4 tracking-widest uppercase">
-              The Product Studio
+              AI Venture Studio
             </span>
           </div>
         </motion.div>
 
-        {/* Heading — blurInUp word animation */}
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-8 max-w-5xl mx-auto leading-[0.95]">
-          <TextAnimate
-            animation="blurInUp"
-            by="word"
-            delay={0.15}
-            duration={0.6}
-            className="text-c-fg-5"
-            segmentClassName="text-c-fg-5"
-          >
-            Where
-          </TextAnimate>{" "}
-          <TextAnimate
-            animation="blurInUp"
-            by="word"
-            delay={0.25}
-            duration={0.6}
-            className="text-c-fg"
-            segmentClassName="text-c-fg"
-          >
-            Intelligence
-          </TextAnimate>
+        {/* Heading */}
+        <motion.h1
+          className="font-display text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter mb-8 max-w-5xl mx-auto leading-[0.95]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        >
+          <span className="text-c-fg">We build AI startups</span>
           <br />
-          <TextAnimate
-            animation="blurInUp"
-            by="word"
-            delay={0.35}
-            duration={0.6}
-            className="text-c-fg-5"
-            segmentClassName="text-c-fg-5"
-          >
-            Meets
-          </TextAnimate>{" "}
-          <TextAnimate
-            animation="blurInUp"
-            by="word"
-            delay={0.45}
-            duration={0.6}
-            className="text-c-fg"
-            segmentClassName="text-c-fg"
-          >
-            Innovation
-          </TextAnimate>
-        </h1>
+          <span className="text-c-fg-5">from zero to product.</span>
+        </motion.h1>
 
         {/* Subtext */}
         <motion.p
           className="text-lg sm:text-xl text-c-fg-4 leading-relaxed max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
         >
-          We build a productized portfolio of software startups—AI-native
-          ventures designed to scale, compound, and deliver lasting value.
+          Barek launches, funds, and scales a portfolio of software ventures.
+          Each one AI-native. Each one sharing infrastructure, data, and growth
+          loops with the rest.
         </motion.p>
 
-        {/* CTA Button */}
+        {/* Dual CTAs */}
         <motion.div
-          className="flex justify-center"
+          className="flex flex-col sm:flex-row justify-center gap-4"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.65 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
         >
-          <Button
-            asChild
-            variant="outline"
-            color="gray"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-c-line-2 text-c-fg-3 hover:text-c-fg-em hover:border-c-fg-5 transition-all duration-300 overflow-hidden"
+          <a
+            href="#contact"
+            className="group inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-accent text-accent-fg font-semibold text-sm rounded-lg hover:bg-accent-hover transition-colors duration-300"
           >
-            <a href="#portfolio">
-              <span className="relative z-10">View the Portfolio</span>
-              <ArrowRightIcon className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
+            Build With Us
+            <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#portfolio"
+            className="group inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-transparent border border-c-line-2 text-c-fg-3 font-medium text-sm rounded-lg hover:text-c-fg-em hover:border-c-fg-5 transition-all duration-300"
+          >
+            Explore Ventures
+            <ArrowTopRightIcon className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
+        </motion.div>
+
+        {/* Social Proof Strip */}
+        <motion.div
+          className="mt-16 pt-10 border-t border-c-line-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <p className="text-xs font-medium text-c-fg-6 uppercase tracking-widest mb-6">
+            Our Portfolio
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
+            {["Trimly", "GlamUp", "Genna", "NeuroCare"].map((name) => (
+              <span
+                key={name}
+                className="text-lg sm:text-xl font-display font-bold text-c-fg-5 hover:text-c-fg transition-colors duration-300 tracking-tight"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+          <div className="flex justify-center items-center gap-8 mt-6 text-c-fg-6">
+            <span className="text-sm">
+              <span className="font-bold text-c-fg-4">12+</span> products launched
+            </span>
+            <span className="w-1 h-1 rounded-full bg-c-fg-6" />
+            <span className="text-sm">
+              <span className="font-bold text-c-fg-4">2.5M</span> active users
+            </span>
+            <span className="w-1 h-1 rounded-full bg-c-fg-6" />
+            <span className="text-sm">
+              <span className="font-bold text-c-fg-4">30+</span> markets
+            </span>
+          </div>
         </motion.div>
       </motion.div>
     </section>

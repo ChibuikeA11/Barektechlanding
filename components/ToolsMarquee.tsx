@@ -1,22 +1,32 @@
 import React from "react";
 import { Marquee } from "./magicui/marquee";
 
-const tools = [
-  "React", "Next.js", "TypeScript", "Node.js", "Python",
-  "TensorFlow", "PostgreSQL", "Redis", "AWS", "Vercel",
-  "Figma", "Docker", "GraphQL", "Prisma", "Tailwind CSS",
+const partners = [
+  "Y Combinator",
+  "Sequoia",
+  "Andreessen Horowitz",
+  "Google for Startups",
+  "Microsoft for Startups",
+  "AWS Activate",
+  "TechStars",
+  "Stripe Atlas",
 ];
 
 const ToolsMarquee: React.FC = () => {
   return (
-    <section className="py-10 bg-background border-y border-c-line-3 overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:30s] [--gap:2rem]">
-        {tools.map((tool) => (
+    <section className="py-8 bg-background border-y border-c-line-3 overflow-hidden">
+      <div className="text-center mb-4">
+        <span className="text-[10px] font-medium text-c-fg-6 uppercase tracking-[0.2em]">
+          Backed by & partnered with
+        </span>
+      </div>
+      <Marquee pauseOnHover className="[--duration:35s] [--gap:3rem]">
+        {partners.map((partner) => (
           <span
-            key={tool}
-            className="text-sm font-medium text-c-fg-5 tracking-wide uppercase whitespace-nowrap"
+            key={partner}
+            className="text-sm font-semibold text-c-fg-6 hover:text-c-fg-4 transition-colors tracking-wide whitespace-nowrap"
           >
-            {tool}
+            {partner}
           </span>
         ))}
       </Marquee>

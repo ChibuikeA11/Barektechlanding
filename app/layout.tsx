@@ -1,12 +1,12 @@
-import { DM_Sans, Inter } from 'next/font/google';
+import { Space_Grotesk, Inter } from 'next/font/google';
 import '@radix-ui/themes/styles.css';
 import './globals.css';
 import { Providers } from '../components/Providers';
 import GlowLayer from '../components/GlowLayer';
 
 export const metadata = {
-  title: 'Barek Technologies | Building the Future',
-  description: 'Barek Technologies product studio and team.',
+  title: 'Barek Technologies | AI Venture Studio',
+  description: 'We build AI-native software startups from scratch. A global product studio.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -20,20 +20,20 @@ const inter = Inter({
   display: 'swap'
 });
 
-const dmSans = DM_Sans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  variable: '--font-display',
   display: 'swap'
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${dmSans.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans">
         <Providers>
           <div className="relative min-h-screen bg-background text-text">
             <GlowLayer />
-            <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.04] mix-blend-overlay" />
+            <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.06] mix-blend-overlay" />
             <div className="relative z-10">
               {children}
             </div>

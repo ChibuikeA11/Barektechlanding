@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen w-full bg-background text-text selection:bg-[var(--gray-7)] selection:text-[var(--gray-12)]">
+    <div className="min-h-screen w-full bg-background text-text selection:bg-accent/20 selection:text-c-fg-em">
       <Navbar />
       <main className="pt-24">
         <Team />

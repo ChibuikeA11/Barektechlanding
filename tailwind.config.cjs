@@ -16,7 +16,12 @@ module.exports = {
         border: 'var(--color-border)',
         text: 'var(--color-text)',
         textMuted: 'var(--color-text-secondary)',
-        accent: 'var(--accent-9)',
+        accent: {
+          DEFAULT: 'var(--c-accent)',
+          soft: 'var(--c-accent-soft)',
+          hover: 'var(--c-accent-hover)',
+          fg: 'var(--c-accent-fg)',
+        },
         c: {
           fg:    'var(--c-fg)',
           'fg-2':  'var(--c-fg-2)',
@@ -45,7 +50,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-dm-sans)', 'system-ui', 'sans-serif']
+        display: ['var(--font-display)', 'system-ui', 'sans-serif']
       },
       animation: {
         marquee: "marquee var(--duration) infinite linear",
